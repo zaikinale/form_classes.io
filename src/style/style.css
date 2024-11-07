@@ -147,6 +147,9 @@ label {
     text-transform: var(--links);
 }
 footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     background-color: var(--color-black);
     height: 220px;
     display: flex;
