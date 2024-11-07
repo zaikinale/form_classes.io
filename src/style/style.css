@@ -10,9 +10,16 @@ body {
     padding: 0;
 }
 a {
+    display: inline-block;
+    box-sizing: border-box;
     text-decoration: none;
     color: var(--color-white);
     text-transform: var(--links);
+    padding: 5px;
+    border-bottom: 1px solid black;
+}
+.link > a:hover {
+    border-bottom: 1px solid white;
 }
 header {
     background-color: var(--color-black);
@@ -35,19 +42,42 @@ header {
     flex-direction: row;
     gap: 10px;
 }
-
-.profile {
+.logo > img {
+    width: 60px;
+}
+.link {
+    position: relative;
+}
+.link > a:hover ~ .dr-down-menu {
+    background-color: var(--color-black);
+    position: absolute;
+    left: -10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    width: 100px;
+    border-radius: 15px;
+}
+.dr-down-menu {
+    display: none;
+}
+.dr-down-menu > a {
+    text-transform: lowercase;
+}
+.profile-icon {
     color: var(--color-white);
     text-transform: var(--links);
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
+    position: relative;
 }
-.profile > img {
+.profile-icon > img {
     background-color: var(--color-white);
     padding: 5px;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     border-radius: 30px;
 }
 .register-menu {
@@ -61,12 +91,17 @@ header {
     padding: 10px 20px 10px 20px;
     position: absolute;
     display: none;
-    top: 80px;
-    right: 60px;
     border-radius: 15px;
 }
-.profile:hover ~ .register-menu{
-    display: block;
+.profile-icon:hover ~ .register-menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.register-menu > img {
+    width: 25px;
 }
 main {
     display: flex;
@@ -99,7 +134,7 @@ label {
     color: var(--color-white);
     text-transform: var(--links);
     position: relative;
-    bottom: -37px;
+    bottom: -28px;
     right: -10px;
     opacity: 0.5;
 }
